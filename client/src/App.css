@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 25px;
+}
+
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.add-task {
+  display: flex;
+  width: 100vw;
+}
+
+.add-task input {
+  width: 70vw;
+  padding: 0.5rem;
+  border: none;
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+
+.add-task button {
+  width: 30vw;
+  border: none;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem;
+  background-color: rgb(189, 189, 189);
+  border-bottom: 1px solid rgb(77, 77, 77);
+}
+.name {
+  width: 30vw;
+  background: white;
+  padding: 0.2rem;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  font-weight: 900;
+}
+
+.state {
+  background: rgb(228, 228, 228);
+  font-size: 16px;
+  width: 20vw;
+  font-style: italic;
+  padding: 0.2rem;
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-task,
+.delete-task {
+  width: 15vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-task button {
+  border: none;
+  padding: 0.2rem 0.5rem;
+  background: white;
+  font-weight: 700;
+}
+
+.delete-task {
+  color: red;
+}
+
+.delete-task:hover,
+.edit-task button:hover,
+.action-container button:hover {
+  cursor: pointer;
+  box-shadow: 1px 1px 1px 1px rgb(122, 122, 122);
+}
+
+.delete-task:hover {
+  transition: 200ms ease-in;
+  background-color: rgb(224, 75, 75);
+  color: white;
+}
+
+.edit-task-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vh;
+  width: 100vw;
+}
+
+.edit-task-form input {
+  width: 30vw;
+  padding: 0.2rem;
+}
+
+.state-box-container {
+  width: 20vw;
+  display: flex;
+  align-items: center;
+}
+
+.action-container {
+  width: 30vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.action-container button {
+  border: none;
+  padding: 0.2rem 0.5rem;
+  font-weight: 700;
+}
