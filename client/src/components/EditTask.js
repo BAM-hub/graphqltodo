@@ -47,6 +47,13 @@ const EditTask = ({ reexcuteQuery }) => {
     setEditTasks([]);
   }
 
+  const cancelHandler = (id) => {
+    // eslint-disable-next-line eqeqeq
+    const newEditTasks = editTasks.filter(task => task.id != id);
+    setEditTasks(newEditTasks);
+    reexcuteQuery({ requestPolicy: 'network-only'  });
+  }
+
   return(
     <>
       { editTasks.length > 0 && (
@@ -67,10 +74,7 @@ const EditTask = ({ reexcuteQuery }) => {
             </div>
             <div className="action-container">
               <button
-                onClick={() => {
-                  setEditTasks([]);
-                  reexcuteQuery({ requestPolicy: 'network-only'  });
-                }}
+                onClick={() => cancelHandler(task.id) }
               >Cancel</button>
               <button
                 onClick={() => saveEditHandler(index)}              

@@ -13,6 +13,7 @@ const AddTask = () => {
     setTasks(prevState => (
       [...prevState, res.data.addTask]
     ));
+    setTaskName('');
   }
   return(
     <div className="add-task">

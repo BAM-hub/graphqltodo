@@ -22,7 +22,6 @@ app.use(bodyParser.json());
 
 
 let taskList = [];
-let editTasks = [];
 
 const TaskType = new GraphQLObjectType({
   name: 'Task',
@@ -31,15 +30,6 @@ const TaskType = new GraphQLObjectType({
     id: { type: GraphQLID },
     name: { type: GraphQLNonNull(GraphQLString) },
     state: { type: GraphQLBoolean }
-  })
-});
-
-
-const EditTasksType = new GraphQLObjectType({
-  name: 'Edit Task',
-  description: 'Store an array of the tasks tob edited',
-  fields: () => ({
-    editTask: new GraphQLList(TaskType)
   })
 });
 
@@ -90,12 +80,7 @@ const RootMutationType = new GraphQLObjectType({
         return taskList = taskList.filter(task => task.id != id);
       }
     },
-  }),
-  setEditTasks: {
-    type: EditTasksType,
-    args: { tasks: EditTasksType },
-    resolve: (__, { tasks }) => editTasks = tasks
-  }
+ }),
 });
 
 
